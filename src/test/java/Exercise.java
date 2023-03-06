@@ -8,6 +8,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utilities.RandomEmail;
 
+import java.io.File;
+import java.io.IOException;
+
 public class Exercise extends Base {
     @BeforeTest
     public void initialize() {
@@ -80,7 +83,8 @@ public class Exercise extends Base {
 
         // >>> Picture
         WebElement chooseFile_button = driver.findElement(By.id("uploadPicture"));
-        chooseFile_button.sendKeys("/Users/rafaela.mendina/Documents/Images/flowers.jpeg");
+        File file = new File("src/test/resources/flowers.jpeg");
+        chooseFile_button.sendKeys(file.getAbsolutePath());
 
         // >>> Current Address
         WebElement currentAddress_textarea = driver.findElement(By.id("currentAddress"));
