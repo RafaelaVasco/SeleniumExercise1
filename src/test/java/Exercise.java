@@ -71,8 +71,8 @@ public class Exercise extends Base {
         subject_input.sendKeys("Computer");
         WebElement subjectOptions_list2 = driver.findElement(By.className("subjects-auto-complete__menu"));
         wait_subjectOptions.until(ExpectedConditions.visibilityOf(subjectOptions_list2));
-        WebElement subjectComputerScient_option = driver.findElement(By.id("react-select-2-option-0"));
-        subjectComputerScient_option.click();
+        WebElement subjectComputerScience_option = driver.findElement(By.id("react-select-2-option-0"));
+        subjectComputerScience_option.click();
 
         // >>> Hobbies
         WebElement hobbies_checkbox = driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]/label"));
@@ -88,11 +88,7 @@ public class Exercise extends Base {
 
         // >>> State
         WebElement state_select = driver.findElement(By.id("state"));
-        /* review */
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", state_select);
-        WebDriverWait wait_state = new WebDriverWait(driver, 2);
-        wait_state.until(ExpectedConditions.visibilityOf(state_select));
-        /* review */
         state_select.click();
 
         driver.switchTo().activeElement();
